@@ -1,9 +1,9 @@
 //导入模块
-let express = require('express');
-let svgCaptcha = require('svg-captcha');
-let path = require('path');
-let bodyParser = require('body-parser');
-let session = require('express-session');
+let express = require('express'); //创建web应用的模块
+let svgCaptcha = require('svg-captcha'); //生成验证码的模块
+let path = require('path'); //路径模块
+let bodyParser = require('body-parser'); //post提交 序列化表单模块
+let session = require('express-session'); //使用session(会话技术) 存储数据的模块
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
 const dbName = 'student';
@@ -72,7 +72,7 @@ app.post('/register', urlencodedParser, (req, res) => {
               });
           }else{
               //用户名重复
-              
+
               res.redirect("/register");
           }
           });
